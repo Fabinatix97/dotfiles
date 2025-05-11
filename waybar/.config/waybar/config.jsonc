@@ -1,14 +1,8 @@
 {
-    // "layer": "top", // Waybar at top layer
-    // "position": "bottom", // Waybar position (top|bottom|left|right)
-    // "height": 30, // Waybar height (to be removed for auto height)
     "margin": "10 15 -5 20",
-    // "width": 1280, // Waybar width
-    // Choose the order of the modules
-    // "modules-left": ["hyprland/workspaces", "sway/language", "keyboard-state", "custom/pacman", "custom/mail", "sway/mode"],
-    "modules-left": ["hyprland/workspaces"],
+    "modules-left": ["hyprland/workspaces", "custom/dnf"],
     "modules-center": ["clock", "custom/weather"],
-    "modules-right": ["pulseaudio", "custom/mem", "backlight", "battery", "tray"],
+    "modules-right": ["pulseaudio", "custom/mem", "temperature", "backlight", "battery"],
 
 
     //***************************
@@ -21,47 +15,18 @@
             "1": [],
             "2": [],
             "3": [],
-            "4": [],
-        },
+            "4": []
+        }
     },
 
-    "sway/language": {
-        "format": "{} ",
-	"min-length": 5,
-	"tooltip": false
-    },
-
-    "keyboard-state": {
-        //"numlock": true,
-        "capslock": true,
-        "format": "{name} {icon} ",
-        "format-icons": {
-            "locked": " ",
-            "unlocked": ""
-        },
-    },
-
-    "custom/pacman": {
-        "format": "{} ",
+    "custom/dnf": {
+        "format": "{} ",
         "interval": 3600,                     			// every hour
-        "exec": "(checkupdates;pacman -Qm | aur vercmp) | wc -l",	// # of updates
-        "exec-if": "exit 0",                  			// always run; consider advanced run conditions
-        "on-click": "foot sh -c 'yay; echo Done - Press enter to exit; read'; pkill -SIGRTMIN+8 waybar", // update system
+        "exec": "dnf check-update --refresh | grep -v '^$' | wc -l",
+        "exec-if": "command -v dnf",
+        "on-click": "foot sh -c 'sudo dnf upgrade -y; echo Done - Press enter to exit; read'; pkill -SIGRTMIN+8 waybar",
         "signal": 8,
-        "tooltip": false,
-    },
-
-    "custom/mail": {
-        "format": "{} ",
-        "exec": "$HOME/.config/waybar/scripts/checkgmail.py",
-        "interval": 120,
-        "on-click": "google-chrome-stable https://mail.google.com/mail/u/0/#inbox ; pkill -SIGRTMIN+9 waybar",
-        "signal": 9,
-        "tooltip": false,
-    },
-
-    "sway/mode": {
-        "format": "<span style=\"italic\">{}</span>"
+        "tooltip": false
     },
 
     "clock": {
@@ -97,14 +62,14 @@
             "default": ["", "", ""]
         },
         "on-click": "pavucontrol",
-        "min-length": 13,
+        "min-length": 13
     },
 
     "custom/mem": {
         "format": "{} 󰍛",
         "interval": 3,
         "exec": "free -h | awk '/Mem:/{printf $3}'",
-        "tooltip": false,
+        "tooltip": false
     },
 
     "temperature": {
@@ -114,14 +79,14 @@
         // "format-critical": "{temperatureC}°C {icon}",
         "format": "{temperatureC}°C {icon}",
         "format-icons": ["", "", "", "", ""],
-        "tooltip": false,
+        "tooltip": false
     },
 
     "backlight": {
         "device": "intel_backlight",
         "format": "{percent}% {icon}",
         "format-icons": ["󰃚","󰃛","󰃜","󰃝","󰃞","󰃟","󰃠"],
-        "min-length": 7,
+        "min-length": 7
     },
 
     "battery": {
@@ -134,11 +99,6 @@
         "format-plugged": "{capacity}% ",
         "format-alt": "{time} {icon}",
         "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
-	"on-update": "$HOME/.config/waybar/scripts/check_battery.sh",
-    },
-
-    "tray": {
-        "icon-size": 16,
-        "spacing": 0
-    },
+	"on-update": "$HOME/.config/waybar/scripts/check_battery.sh"
+    }
 }

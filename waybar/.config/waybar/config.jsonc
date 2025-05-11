@@ -1,8 +1,8 @@
 {
     "margin": "10 15 -5 20",
-    "modules-left": ["hyprland/workspaces", "custom/dnf"],
+    "modules-left": ["hyprland/workspaces", "custom/dnf", "pulseaudio"],
     "modules-center": ["clock", "custom/weather"],
-    "modules-right": ["pulseaudio", "custom/mem", "temperature", "backlight", "battery"],
+    "modules-right": ["custom/mem", "temperature", "backlight", "battery"],
 
 
     //***************************

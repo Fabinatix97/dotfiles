@@ -30,9 +30,16 @@ git submodule update --init --recursive
 
 ## VS Code Extensions
 
-To install all my frequently used VS Code extensions at once, run the following command
+To install all my frequently used VS Code extensions at once, run the following command:
 
 ```bash
 cd dotfiles
 xargs -n 1 code --install-extension < vscode.extensions
+```
+
+To export the current extensions list, run the following command:
+
+```bash
+cd dotfiles
+code --list-extensions > vscode.extensions
 ```

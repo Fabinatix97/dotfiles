@@ -33,9 +33,6 @@
   // Code Intelligence, Suggestions & Autocomplete
   "editor.acceptSuggestionOnEnter": "smart",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  // "[vue]": {
-  //   "editor.defaultFormatter": "Vue.volar"
-  // },
   "editor.lightbulb.enabled": "on",
   "editor.inlineSuggest.enabled": true,
   "editor.suggest.showWords": false,
@@ -51,6 +48,9 @@
   "typescript.preferences.importModuleSpecifier": "non-relative",
   "typescript.suggest.completeFunctionCalls": true,
   // File & Folder Exclusions
+  "files.exclude": {
+    "**/.git": false
+  },
   "files.watcherExclude": {
     "**/.output/**": true,
     "**/.yarn/**": true,

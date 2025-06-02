@@ -72,6 +72,7 @@
   "explorer.openEditors.visible": 1,
   "extensions.ignoreRecommendations": true,
   "files.insertFinalNewline": false,
+  "git.confirmSync": false,
   "markdown.preview.markEditorSelection": false,
   "telemetry.telemetryLevel": "off",
   "window.zoomLevel": 0.6,

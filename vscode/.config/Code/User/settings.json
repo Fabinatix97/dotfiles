@@ -58,8 +58,8 @@
     "backend/vendor/**": true
   },
   // Theming & UI
-  "terminal.integrated.fontFamily": "JetBrains Mono",
-  "terminal.integrated.fontSize": 12,
+  "terminal.integrated.fontFamily": "CaskaydiaCove Nerd Font Mono",
+  "terminal.integrated.fontSize": 13,
   "terminal.integrated.lineHeight": 1,
   "window.autoDetectColorScheme": true,
   "workbench.iconTheme": "city-lights-icons-vsc-light",

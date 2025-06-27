@@ -1,6 +1,6 @@
 {
     "margin": "10 15 -5 20",
-    "modules-left": ["hyprland/workspaces", "custom/dnf", "pulseaudio"],
+    "modules-left": ["hyprland/workspaces", "custom/dnf", "pulseaudio", "custom/nordvpn"],
     "modules-center": ["clock", "custom/weather"],
     "modules-right": ["custom/mem", "temperature", "backlight", "battery"],
 
@@ -24,13 +24,12 @@
         "interval": 3600,
         "exec": "dnf check-update --refresh | grep -v '^$' | wc -l",
         "exec-if": "command -v dnf",
-        "on-click": "foot sh -c 'sudo dnf upgrade -y; echo Done - Press enter to exit; read'; pkill -SIGRTMIN+8 waybar",
+        "on-click": "kitty sh -c 'sudo dnf upgrade -y; echo Done - Press enter to exit; read'; pkill -SIGRTMIN+8 waybar",
         "signal": 8,
         "tooltip": false
     },
 
     "clock": {
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format": "{:%a, %d %b, %H:%M}"
     },
 
@@ -61,6 +60,15 @@
         },
         "on-click": "pavucontrol",
         "min-length": 13
+    },
+
+    "custom/nordvpn": {
+        "format": "{} NordVPN",
+        "interval": 15,
+        "exec": "$HOME/.config/waybar/scripts/nordvpn_status.sh",
+        "on-click": "kitty --class nordvpn sh -c '$HOME/.config/waybar/scripts/nordvpn_connect.sh'",
+        "signal": 9,
+        "tooltip": false
     },
 
     "custom/mem": {

@@ -1,8 +1,8 @@
 {
     "margin": "10 15 -5 20",
     "modules-left": ["hyprland/workspaces", "custom/dnf", "pulseaudio", "custom/nordvpn"],
-    "modules-center": ["clock", "custom/weather"],
-    "modules-right": ["custom/mem", "temperature", "backlight", "battery"],
+    "modules-center": ["custom/day", "clock", "custom/weather"],
+    "modules-right": ["custom/mem", "custom/cpu", "temperature", "backlight", "battery"],
 
 
     //***************************
@@ -29,8 +29,14 @@
         "tooltip": false
     },
 
+    "custom/day": {
+        "format": "{}",
+        "interval": 60,
+        "exec": "date +%d"
+    },
+
     "clock": {
-        "format": "{:%a, %d %b, %H:%M}"
+        "format": "{:%H:%M}"
     },
 
     "custom/weather": {
@@ -72,9 +78,16 @@
     },
 
     "custom/mem": {
-        "format": "{} 󰍛",
+        "format": "{} ",
         "interval": 3,
         "exec": "free -h | awk '/Mem:/{printf $3}'",
+        "tooltip": false
+    },
+
+    "custom/cpu": {
+        "format": "{} ",
+        "interval": 3,
+        "exec": "$HOME/.config/waybar/scripts/cpu_usage.sh",
         "tooltip": false
     },
 

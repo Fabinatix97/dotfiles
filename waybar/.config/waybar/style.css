@@ -1,184 +1,90 @@
 * {
     border: none;
     border-radius: 0;
-    /* `otf-font-awesome` is required to be installed for icons */
     font-family: "Liberation Mono";
     min-height: 20px;
 }
 
+/* Window */
 window#waybar {
     background: transparent;
 }
-
 window#waybar.hidden {
     opacity: 0.2;
 }
 
+/* Workspaces */
 #workspaces {
     margin-right: 8px;
     border-radius: 10px;
-    transition: none;
     background: #383c4a;
-}
-
-#workspaces button {
     transition: none;
+}
+#workspaces button {
     color: #7c818c;
     background: transparent;
     padding: 5px;
     font-size: 18px;
+    transition: none;
 }
-
 #workspaces button.persistent {
     color: #7c818c;
     font-size: 12px;
 }
-
-/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 #workspaces button:hover {
-    transition: none;
-    box-shadow: inherit;
-    text-shadow: inherit;
-    border-radius: inherit;
     color: #383c4a;
     background: #7c818c;
+    border-radius: inherit;
+    box-shadow: inherit;
+    text-shadow: inherit;
+    transition: none;
 }
-
 #workspaces button.active {
     color: white;
 }
 
-#custom-dnf {
-    margin-right: 8px;
-    padding-left: 16px;
-    padding-right: 16px;
-    border-radius: 10px;
-    transition: none;
-    color: #ffffff;
-    background: #383c4a;
-}
-
-#custom-nordvpn {
-    padding-left: 16px;
-    padding-right: 16px;
-    border-radius: 10px;
-    transition: none;
-    color: #ffffff;
-    background: #383c4a;
-}
-
-#pulseaudio {
-    margin-right: 8px;
-    padding-left: 16px;
-    padding-right: 16px;
-    border-radius: 10px;
-    transition: none;
-    color: #ffffff;
-    background: #383c4a;
-}
-
-#pulseaudio.muted {
-    background-color: #90b1b1;
-    color: #2a5c45;
-}
-
-#custom-day {
-    padding-left: 16px;
-    padding-right: 16px;
-    border-radius: 10px;
-    margin-right: 8px;
-    transition: none;
-    color: #ffffff;
-    background: #383c4a;
-}
-
-#clock {
-    padding-left: 16px;
-    padding-right: 16px;
-    border-radius: 10px;
-    margin-right: 8px;
-    transition: none;
-    color: #ffffff;
-    background: #383c4a;
-}
-
-#custom-weather {
-    padding-left: 16px;
-    padding-right: 16px;
-    border-radius: 10px;
-    transition: none;
-    color: #ffffff;
-    background: #383c4a;
-}
-
-#custom-mem {
-    margin-right: 8px;
-    padding-left: 16px;
-    padding-right: 16px;
-    border-radius: 10px;
-    margin-right: 8px;
-    transition: none;
-    color: #ffffff;
-    background: #383c4a;
-}
-
-#custom-cpu {
-    margin-right: 8px;
-    padding-left: 16px;
-    padding-right: 16px;
-    border-radius: 10px;
-    margin-right: 8px;
-    transition: none;
-    color: #ffffff;
-    background: #383c4a;
-}
-
-#temperature {
-    margin-right: 4px;
-    padding-left: 16px;
-    padding-right: 16px;
-    border-radius: 10px;
-    margin-right: 8px;
-    transition: none;
-    color: #ffffff;
-    background: #383c4a;
-}
-
-#temperature.critical {
-    background-color: #eb4d4b;
-}
-
-#backlight {
-    margin-right: 8px;
-    padding-left: 16px;
-    padding-right: 16px;
-    border-radius: 10px;
-    margin-right: 8px;
-    transition: none;
-    color: #ffffff;
-    background: #383c4a;
-}
-
+/* Custom modules */
+#custom-dnf,
+#custom-flatpak,
+#custom-nordvpn,
+#pulseaudio,
+#custom-day,
+#clock,
+#custom-weather,
+#custom-mem,
+#custom-cpu,
+#temperature,
+#backlight,
 #battery {
     margin-right: 8px;
     padding-left: 16px;
     padding-right: 16px;
     border-radius: 10px;
-    transition: none;
     color: #ffffff;
     background: #383c4a;
+    transition: none;
 }
 
+/* Pulseaudio muted */
+#pulseaudio.muted {
+    background-color: #90b1b1;
+    color: #2a5c45;
+}
+
+/* Temperature critical */
+#temperature.critical {
+    background-color: #eb4d4b;
+}
+
+/* Battery states */
 #battery.charging {
     color: #ffffff;
     background-color: #26A65B;
 }
-
 #battery.warning:not(.charging) {
     background-color: #ffbe61;
     color: black;
 }
-
 #battery.critical:not(.charging) {
     background-color: #f53c3c;
     color: #ffffff;
@@ -188,7 +94,6 @@ window#waybar.hidden {
     animation-iteration-count: infinite;
     animation-direction: alternate;
 }
-
 @keyframes blink {
     to {
         background-color: #ffffff;

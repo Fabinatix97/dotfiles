@@ -1,6 +1,12 @@
 {
     "margin": "10 15 -5 20",
-    "modules-left": ["hyprland/workspaces", "custom/dnf", "pulseaudio", "custom/nordvpn"],
+    "modules-left": [
+        "hyprland/workspaces",
+        "custom/dnf",
+        "custom/flatpak",
+        "pulseaudio",
+        "custom/nordvpn"
+    ],
     "modules-center": ["custom/day", "clock", "custom/weather"],
     "modules-right": ["custom/mem", "custom/cpu", "temperature", "backlight", "battery"],
 
@@ -26,6 +32,16 @@
         "exec-if": "command -v dnf",
         "on-click": "kitty sh -c 'sudo dnf upgrade -y; echo Done - Press enter to exit; read'; pkill -SIGRTMIN+8 waybar",
         "signal": 8,
+        "tooltip": false
+    },
+
+    "custom/flatpak": {
+        "format": "{} ",
+        "interval": 3600,
+        "exec": "flatpak remote-ls --updates | wc -l",
+        "exec-if": "command -v flatpak",
+        "on-click": "kitty sh -c 'flatpak update -y; echo Done - Press enter to exit; read'; pkill -SIGRTMIN+10 waybar",
+        "signal": 10,
         "tooltip": false
     },
 

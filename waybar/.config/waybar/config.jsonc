@@ -5,6 +5,7 @@
         "custom/dnf",
         "custom/flatpak",
         "pulseaudio",
+        "custom/network",
         "custom/nordvpn"
     ],
     "modules-center": ["custom/day", "clock", "custom/weather"],
@@ -82,6 +83,12 @@
         },
         "on-click": "pavucontrol",
         "min-length": 13
+    },
+
+    "custom/network": {
+        "format": " ",
+        "tooltip": false,
+        "on-click": "nm-connection-editor"
     },
 
     "custom/nordvpn": {

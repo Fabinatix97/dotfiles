@@ -8,6 +8,9 @@ github.copilot
 github.copilot-chat
 mblode.twig-language-2
 ms-vscode-remote.remote-containers
+ms-vscode-remote.remote-ssh
+ms-vscode-remote.remote-ssh-edit
+ms-vscode.remote-explorer
 ms-vscode.vscode-typescript-next
 nuxt.mdc
 nuxtr.nuxtr-vscode

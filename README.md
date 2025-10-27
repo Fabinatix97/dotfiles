@@ -25,6 +25,20 @@ cd dotfiles
 git submodule update --init --recursive
 ```
 
+You can update the submodule like this:
+
+```bash
+cd dotfiles
+git submodule update --init --recursive
+cd private
+git switch main
+git pull origin main
+cd ..
+git add private
+git commit -m "Update private submodule"
+git push
+```
+
 > [!note]
 > The dotfiles repo stores the exact commit hash of dotfiles-personal in its Git history. If you make changes to the `main` branch of dotfiles-personal, they are not automatically reflected here. You’ll need to manually update the submodule to get the latest state of the main branch.
 

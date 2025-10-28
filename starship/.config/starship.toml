@@ -43,9 +43,6 @@ symbol = " "
 [fennel]
 symbol = " "
 
-[fortran]
-symbol = " "
-
 [fossil_branch]
 symbol = " "
 
@@ -115,7 +112,6 @@ Alpine = " "
 AlmaLinux = " "
 Amazon = " "
 Android = " "
-AOSC = " "
 Arch = " "
 Artix = " "
 CachyOS = " "
@@ -192,9 +188,6 @@ symbol = " "
 
 [swift]
 symbol = " "
-
-[xmake]
-symbol = " "
 
 [zig]
 symbol = " "

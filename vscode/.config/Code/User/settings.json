@@ -17,6 +17,7 @@
   "editor.gotoLocation.multipleTypeDefinitions": "goto",
   "editor.guides.indentation": false,
   "editor.lineHeight": 1.5,
+  "editor.lineNumbers": "relative",
   "editor.linkedEditing": true,
   "editor.minimap.enabled": false,
   "editor.multiCursorModifier": "ctrlCmd",
@@ -32,7 +33,6 @@
   "editor.wordWrap": "on",
   // Code Intelligence, Suggestions & Autocomplete
   "editor.acceptSuggestionOnEnter": "smart",
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.lightbulb.enabled": "on",
   "editor.inlineSuggest.enabled": true,
   "editor.suggest.showWords": false,
@@ -63,8 +63,8 @@
   "terminal.integrated.lineHeight": 1,
   "window.autoDetectColorScheme": true,
   "workbench.iconTheme": "city-lights-icons-vsc-light",
-  "workbench.productIconTheme": "icons-carbon",
   "workbench.preferredDarkColorTheme": "Palenight Operator",
+  "workbench.productIconTheme": "icons-carbon",
   // Workbench Behavior
   "diffEditor.ignoreTrimWhitespace": true,
   "diffEditor.renderSideBySide": true,
@@ -86,8 +86,51 @@
   "workbench.editor.showTabs": "multiple",
   "workbench.sideBar.location": "left",
   "workbench.startupEditor": "newUntitledFile",
-  // Zen Mode
-  "zenMode.centerLayout": false,
-  "zenMode.fullScreen": false,
-  "zenMode.showTabs": "none",
+  // Vim Key Bindings
+  "vim.leader": "<space>",
+  "vim.normalModeKeyBindings": [
+    {
+      "before": ["<leader>", "k", "w"],
+      "commands": ["workbench.action.closeAllEditors"]
+    },
+    {
+      "before": ["<leader>", "ö"],
+      "commands": ["workbench.action.togglePanel"]
+    },
+    {
+      "before": ["<leader>", "p", "v"],
+      "commands": ["workbench.action.toggleSidebarVisibility"]
+    },
+    {
+      "before": ["<leader>", "p", "f"],
+      "commands": ["workbench.action.quickOpen"]
+    },
+    {
+      "before": ["<leader>", "p", "r"],
+      "commands": ["workbench.action.openRecent"]
+    },
+    {
+      "before": ["<leader>", "p", "p"],
+      "commands": ["workbench.action.showCommands"]
+    },
+    {
+      "before": ["K"],
+      "commands": ["editor.action.moveLinesUpAction"]
+    },
+    {
+      "before": ["J"],
+      "commands": ["editor.action.moveLinesDownAction"]
+    }
+  ],
+  "vim.visualModeKeyBindings": [
+    {
+      "before": ["K"],
+      "commands": ["editor.action.moveLinesUpAction"]
+    },
+    {
+      "before": ["J"],
+      "commands": ["editor.action.moveLinesDownAction"]
+    }
+  ]
 }
+

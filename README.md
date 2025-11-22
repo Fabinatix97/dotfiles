@@ -48,7 +48,9 @@ To install all my frequently used VS Code extensions at once, run the following 
 
 ```bash
 cd dotfiles
-xargs -n 1 code --install-extension < vscode.extensions
+while read ext; do
+  code --install-extension "$ext" --force
+done < vscode.extensions
 ```
 
 To export the current extensions list, run the following command:

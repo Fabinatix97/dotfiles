@@ -5,11 +5,22 @@
         "custom/dnf",
         "custom/flatpak",
         "pulseaudio",
+        "custom/bluetui",
         "custom/network",
         "custom/nordvpn"
     ],
-    "modules-center": ["custom/day", "clock", "custom/weather"],
-    "modules-right": ["custom/mem", "custom/cpu", "temperature", "backlight", "battery"],
+    "modules-center": [
+        "custom/day",
+        "clock",
+        "custom/weather"
+    ],
+    "modules-right": [
+        "custom/mem",
+        "custom/cpu",
+        "temperature",
+        "backlight",
+        "battery"
+    ],
 
 
     //***************************
@@ -46,15 +57,50 @@
         "tooltip": false
     },
 
+    "pulseaudio": {
+        "reverse-scrolling": 1,
+        "format": "{volume}% {icon}",
+        "format-muted": "",
+        "format-icons": {
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol",
+        "min-length": 4
+    },
+
+    "custom/bluetui": {
+        "format": "󰂯",
+        "on-click": "kitty --hold -e bluetui",
+        "tooltip": false,
+    },
+
+    "custom/network": {
+        "format": "",
+        "on-click": "kitty sh -c '$HOME/.config/waybar/scripts/wifi_connect.sh'",
+        "min-length": 3,
+        "tooltip": false,
+    },
+
+    "custom/nordvpn": {
+        "format": "{} ",
+        "interval": 15,
+        "exec": "$HOME/.config/waybar/scripts/nordvpn_status.sh",
+        "on-click": "kitty --class nordvpn sh -c '$HOME/.config/waybar/scripts/nordvpn_connect.sh'",
+        "signal": 9,
+        "tooltip": false,
+    },
+
     "custom/day": {
         "format": "{}",
         "interval": 60,
-        "exec": "date +%d"
+        "exec": "date +%d",
+        "tooltip": false
     },
 
     "clock": {
         "format": "{:%H:%M:%S}",
-        "interval": 1
+        "interval": 1,
+        "tooltip": false
     },
 
     "custom/weather": {
@@ -63,42 +109,6 @@
         "interval": 1800,
         "exec": "$HOME/.config/waybar/scripts/wttr.py",
         "return-type": "json"
-    },
-
-    "pulseaudio": {
-        "reverse-scrolling": 1,
-        "format": "{volume}% {icon} {format_source}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
-        "format-source": "{volume}% ",
-        "format-source-muted": "",
-        "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", "", ""]
-        },
-        "on-click": "pavucontrol",
-        "min-length": 13
-    },
-
-    "custom/network": {
-        "format": " ",
-        "tooltip": false,
-        "on-click": "nm-connection-editor"
-    },
-
-    "custom/nordvpn": {
-        "format": "{} NordVPN",
-        "interval": 15,
-        "exec": "$HOME/.config/waybar/scripts/nordvpn_status.sh",
-        "on-click": "kitty --class nordvpn sh -c '$HOME/.config/waybar/scripts/nordvpn_connect.sh'",
-        "signal": 9,
-        "tooltip": false
     },
 
     "custom/mem": {

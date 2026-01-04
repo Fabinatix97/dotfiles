@@ -91,10 +91,9 @@
     },
 
     "custom/day": {
-        "format": "{}",
         "interval": 60,
-        "exec": "date +%d",
-        "tooltip": false
+        "return-type": "json",
+        "exec": "date '+{\"text\":\"%d\",\"tooltip\":\"%A %d %B %Y\"}'"
     },
 
     "clock": {

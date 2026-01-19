@@ -50,7 +50,7 @@
     "custom/flatpak": {
         "format": "{} ",
         "interval": 3600,
-        "exec": "flatpak remote-ls --updates | wc -l",
+        "exec": "flatpak update --assumeyes --no-deploy 2>/dev/null | grep -E '^(Update|Install|Remove):' | wc -l",
         "exec-if": "command -v flatpak",
         "on-click": "kitty sh -c 'flatpak update -y; echo Done - Press enter to exit; read'; pkill -SIGRTMIN+10 waybar",
         "signal": 10,

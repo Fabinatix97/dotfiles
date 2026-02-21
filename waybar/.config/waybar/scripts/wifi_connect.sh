@@ -22,7 +22,7 @@ else
 fi
 
 echo "Scanning for wifi networks..."
-nmcli -t --fields SSID,SIGNAL,SECURITY --colors no device wifi list
+nmcli -t -f SSID device wifi list | sort | uniq
 
 read -p "Enter network SSID you want to connect to: " SSID
 

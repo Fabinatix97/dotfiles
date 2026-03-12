@@ -1,9 +1,8 @@
-#!/bin/bash
+#!/bin/sh
 
 echo "Checking if logged in to NordVPN..."
 login_check_output=$(nordvpn account 2>&1)
 if echo "$login_check_output" | grep -q "You are not logged in"; then
-    # Not logged in
     echo "You are not logged in."
     echo "Logging in..."
     login_output=$(nordvpn login 2>&1)
@@ -22,18 +21,15 @@ if echo "$login_check_output" | grep -q "You are not logged in"; then
     echo "Please complete login in the browser, then press Enter here to continue."
     read
 else
-    # Logged in
     echo "Logged in successfully."
     echo "Checking status of NordVPN..."
     status_output=$(nordvpn status | grep '^Status:' | cut -d' ' -f2)
     echo "$status_output"
 
     if echo "$status_output" | grep -q "Connected"; then
-        # Connected
         echo "Disconnecting from NordVPN..."
         nordvpn disconnect
     else
-        # Not connected
         echo "Available NordVPN countries:"
         nordvpn countries
         echo

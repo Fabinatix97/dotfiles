@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 STATE=$(nmcli -t -f STATE general)
 CURRENT_SSID=$(nmcli -t -f NAME,DEVICE,TYPE connection show --active | head -n1 | cut -d: -f1)
@@ -29,7 +29,6 @@ read -p "Enter network SSID you want to connect to: " SSID
 echo "Connecting to $SSID..."
 nmcli device wifi connect "$SSID" --ask
 
-# Check connection
 if [ $? -eq 0 ]; then
   echo "Connected to $SSID successfully!"
   echo "For public Wi-Fi with captive portal, open a browser to accept terms & conditions."

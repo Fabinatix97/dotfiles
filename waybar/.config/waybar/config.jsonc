@@ -4,7 +4,7 @@
         "hyprland/workspaces",
         "custom/dnf",
         "custom/flatpak",
-        "pulseaudio",
+        "custom/audio",
         "custom/bluetui",
         "custom/network",
         "custom/nordvpn"
@@ -57,15 +57,14 @@
         "tooltip": false
     },
 
-    "pulseaudio": {
-        "reverse-scrolling": 1,
-        "format": "{volume}% {icon}",
-        "format-muted": "",
-        "format-icons": {
-            "default": ["", "", ""]
-        },
-        "on-click": "pavucontrol",
-        "min-length": 4
+    "custom/audio": {
+        "exec": "~/.config/waybar/scripts/audio-status.sh",
+        "return-type": "json",
+        "interval": 2,
+        "on-click": "kitty --class audio-switcher ~/.config/waybar/scripts/audio-select.sh",
+        "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
+        "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%",
+        "tooltip": true
     },
 
     "custom/bluetui": {

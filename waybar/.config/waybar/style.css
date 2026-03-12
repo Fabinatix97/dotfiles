@@ -46,7 +46,7 @@ window#waybar.hidden {
 /* Custom modules */
 #custom-dnf,
 #custom-flatpak,
-#pulseaudio,
+#custom-audio,
 #custom-bluetui,
 #custom-network,
 #custom-nordvpn,

@@ -32,6 +32,7 @@
   "editor.wordSeparators": "`~!@#%^&*()=+[{]}\\|;:'\",.<>/?",
   "editor.wordWrap": "on",
   // Code Intelligence, Suggestions & Autocomplete
+  "chat.disableAIFeatures": true,
   "editor.acceptSuggestionOnEnter": "smart",
   "editor.lightbulb.enabled": "on",
   "editor.inlineSuggest.enabled": true,

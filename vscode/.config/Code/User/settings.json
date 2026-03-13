@@ -45,9 +45,8 @@
     "strings": true
   },
   "emmet.showAbbreviationSuggestions": false,
-  "javascript.preferences.importModuleSpecifier": "non-relative",
-  "typescript.preferences.importModuleSpecifier": "non-relative",
-  "typescript.suggest.completeFunctionCalls": true,
+  "js/ts.preferences.importModuleSpecifier": "non-relative",
+  "js/ts.suggest.completeFunctionCalls": true,
   // File & Folder Exclusions
   "files.exclude": {
     "**/.git": false

@@ -90,19 +90,19 @@
   "vim.leader": "<space>",
   "vim.normalModeKeyBindings": [
     {
-      "before": ["<leader>", "k", "w"],
-      "commands": ["workbench.action.closeAllEditors"]
+      "before": ["<leader>", "b", "d"],
+      "commands": ["workbench.action.closeActiveEditor"]
     },
     {
-      "before": ["<leader>", "ö"],
+      "before": ["<leader>", "f", "t"],
       "commands": ["workbench.action.togglePanel"]
     },
     {
-      "before": ["<leader>", "p", "v"],
+      "before": ["<leader>", "e"],
       "commands": ["workbench.action.toggleSidebarVisibility"]
     },
     {
-      "before": ["<leader>", "p", "f"],
+      "before": ["<leader>", "f", "f"],
       "commands": ["workbench.action.quickOpen"]
     },
     {
@@ -112,6 +112,10 @@
     {
       "before": ["<leader>", "p", "p"],
       "commands": ["workbench.action.showCommands"]
+    },
+    {
+      "before": ["<leader>", "g", "d"],
+      "commands": ["editor.action.revealDefinition"]
     },
     {
       "before": ["K"],

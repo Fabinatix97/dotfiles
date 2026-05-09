@@ -69,7 +69,7 @@
 
     "custom/bluetui": {
         "format": "󰂯",
-        "on-click": "kitty --hold -e bluetui",
+        "on-click": "kitty --hold -e ~/.local/bin/bluetui",
         "tooltip": false,
     },
 

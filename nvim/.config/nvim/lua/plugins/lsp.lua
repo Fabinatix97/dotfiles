@@ -1,13 +1,14 @@
 return {
-	-- Main LSP Configuration
 	"neovim/nvim-lspconfig",
 	dependencies = {
-		{
-			"mason-org/mason.nvim",
-			opts = {},
-		},
+		-- Mason must be loaded before its dependents so we need to set it up here.
+		-- NOTE: `opts = {}` is the same as calling `require('mason').setup({})`
+		{ "mason-org/mason.nvim", opts = {} },
+
+		-- Maps LSP server names between nvim-lspconfig and Mason package names.
 		"mason-org/mason-lspconfig.nvim",
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
+
 		-- Useful status updates for LSP.
 		{ "j-hui/fidget.nvim", opts = {} },
 	},
@@ -24,11 +25,6 @@ return {
 				map("gra", vim.lsp.buf.code_action, "[G]oto Code [A]ction", { "n", "x" })
 				map("grD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
 
-				-- The following two autocommands are used to highlight references of the
-				-- word under your cursor when your cursor rests there for a little while.
-				--    See `:help CursorHold` for information about when this is executed
-				--
-				-- When you move your cursor, the highlights will be cleared (the second autocommand).
 				local client = vim.lsp.get_client_by_id(event.data.client_id)
 				if client and client:supports_method("textDocument/documentHighlight", event.buf) then
 					local highlight_augroup = vim.api.nvim_create_augroup("lsp-highlight", { clear = false })
@@ -53,10 +49,6 @@ return {
 					})
 				end
 
-				-- The following code creates a keymap to toggle inlay hints in your
-				-- code, if the language server you are using supports them
-				--
-				-- This may be unwanted, since they displace some of your code
 				if client and client:supports_method("textDocument/inlayHint", event.buf) then
 					map("<leader>th", function()
 						vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = event.buf }))
@@ -66,7 +58,6 @@ return {
 		})
 
 		local servers = {
-			jdtls = {},
 			ts_ls = {},
 			intelephense = {
 				settings = {
@@ -80,9 +71,6 @@ return {
 				filetypes = { "php" },
 				root_markers = { "composer.json" },
 			},
-			stylua = {}, -- Used to format Lua code
-
-			-- Special Lua Config, as recommended by neovim help docs
 			lua_ls = {
 				on_init = function(client)
 					client.server_capabilities.documentFormattingProvider = false -- Disable formatting (formatting is done by stylua)
@@ -113,7 +101,6 @@ return {
 						},
 					})
 				end,
-				---@type lspconfig.settings.lua_ls
 				settings = {
 					Lua = {
 						format = { enable = false }, -- Disable formatting (formatting is done by stylua)
@@ -122,12 +109,15 @@ return {
 			},
 		}
 
+		-- Install the above servers
 		local ensure_installed = vim.tbl_keys(servers or {})
+		-- Install additional tools (linters, formatters, DAPs)
 		vim.list_extend(ensure_installed, {
-			"java-debug-adapter",
-			"java-test",
+			--"java-debug-adapter",
+			--"java-test",
 			"phpcs",
 			"php-cs-fixer",
+			"stylua",
 		})
 
 		require("mason-tool-installer").setup({ ensure_installed = ensure_installed })

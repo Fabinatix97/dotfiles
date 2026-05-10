@@ -123,14 +123,5 @@ return {
     --   vim.fn.sign_define(tp, { text = icon, texthl = hl, numhl = hl })
     -- end
 
-    -- PHP configuration
-    dap.configurations.php = {
-      {
-        type = 'php',
-        request = 'launch',
-        name = 'Listen for Xdebug',
-        port = 9003,
-      },
-    }
   end,
 }

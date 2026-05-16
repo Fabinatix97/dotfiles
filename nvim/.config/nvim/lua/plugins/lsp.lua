@@ -116,6 +116,7 @@ return {
 		vim.list_extend(ensure_installed, {
 			"java-debug-adapter",
 			"java-test",
+            "markdownlint-cli2",
 			"phpcs",
 			"php-cs-fixer",
 			"stylua",

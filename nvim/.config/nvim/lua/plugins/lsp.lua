@@ -71,6 +71,7 @@ return {
 				filetypes = { "php" },
 				root_markers = { "composer.json" },
 			},
+            jdtls = {},
 			lua_ls = {
 				on_init = function(client)
 					client.server_capabilities.documentFormattingProvider = false -- Disable formatting (formatting is done by stylua)
@@ -113,8 +114,8 @@ return {
 		local ensure_installed = vim.tbl_keys(servers or {})
 		-- Install additional tools (linters, formatters, DAPs)
 		vim.list_extend(ensure_installed, {
-			--"java-debug-adapter",
-			--"java-test",
+			"java-debug-adapter",
+			"java-test",
 			"phpcs",
 			"php-cs-fixer",
 			"stylua",

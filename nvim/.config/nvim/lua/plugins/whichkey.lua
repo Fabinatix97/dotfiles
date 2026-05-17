@@ -7,11 +7,16 @@ return {
 
 		-- Document existing key chains
 		spec = {
-			{ "<leader>s", group = "[S]earch", mode = { "n", "v" } },
-			{ "<leader>t", group = "[T]oggle" },
-			{ "<leader>c", group = "[C]ode action", mode = { "n", "v" } },
-			{ "<leader>ce", group = "[E]xtract", mode = { "n", "v" } },
-			{ "gr", group = "LSP Actions", mode = { "n" } },
+			{ "<leader>s", group = "search", mode = { "n", "v" }, icon = "" },
+			{ "<leader>t", group = "toggle", mode = { "n" }, icon = "" },
+			{ "<leader>c", group = "code action", mode = { "n", "v" } },
+			{ "<leader>ce", group = "extract", mode = { "n", "v" } },
+			{ "gr", group = "lsp actions", mode = { "n" } },
+            { "<leader>l", group = "lazy" },
+            { "]b", desc = "next buffer" },
+            { "]B", desc = "last buffer" },
+            { "[b", desc = "previous buffer" },
+            { "[B", desc = "first buffer" },
 		},
 	},
 }

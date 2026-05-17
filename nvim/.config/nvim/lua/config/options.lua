@@ -24,20 +24,20 @@ vim.opt.signcolumn = "yes"
 vim.opt.updatetime = 50
 
 vim.api.nvim_create_autocmd("TextYankPost", {
-	desc = "Highlight when yanking (copying) text",
-	group = vim.api.nvim_create_augroup("highlight-yank", { clear = true }),
-	callback = function()
-		vim.hl.on_yank()
-	end,
+    desc = "highlight when yanking (copying) text",
+    group = vim.api.nvim_create_augroup("highlight-yank", { clear = true }),
+    callback = function()
+        vim.hl.on_yank()
+    end,
 })
 vim.schedule(function()
-	vim.o.clipboard = "unnamedplus"
+    vim.o.clipboard = "unnamedplus"
 end)
 vim.opt.undofile = true
 
 vim.diagnostic.config({
-	float = {
-		source = "always",
-		border = border,
-	},
+    float = {
+        source = "always",
+        border = border,
+    },
 })

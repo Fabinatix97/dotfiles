@@ -63,9 +63,9 @@ local config = {
 }
 require("jdtls").start_or_attach(config)
 
-vim.keymap.set('n', '<leader>co', "<Cmd>lua require'jdtls'.organize_imports()<CR>", { desc = '[O]rganize Imports' })
-vim.keymap.set('n', '<leader>cev', "<Cmd>lua require('jdtls').extract_variable()<CR>", { desc = '[V]ariable' })
-vim.keymap.set('v', '<leader>cev', "<Esc><Cmd>lua require('jdtls').extract_variable(true)<CR>", { desc = '[V]ariable' })
-vim.keymap.set('n', '<leader>cec', "<Cmd>lua require('jdtls').extract_constant()<CR>", { desc = '[C]onstant' })
-vim.keymap.set('v', '<leader>cec', "<Esc><Cmd>lua require('jdtls').extract_constant(true)<CR>", { desc = '[C]onstant' })
-vim.keymap.set('v', '<leader>cem', "<Esc><Cmd>lua require('jdtls').extract_method(true)<CR>", { desc = '[M]ethod' })
+vim.keymap.set('n', '<leader>co', "<Cmd>lua require'jdtls'.organize_imports()<CR>", { desc = 'organize imports' })
+vim.keymap.set('n', '<leader>cev', "<Cmd>lua require('jdtls').extract_variable()<CR>", { desc = 'extract variable' })
+vim.keymap.set('v', '<leader>cev', "<Esc><Cmd>lua require('jdtls').extract_variable(true)<CR>", { desc = 'extract variable' })
+vim.keymap.set('n', '<leader>cec', "<Cmd>lua require('jdtls').extract_constant()<CR>", { desc = 'extract constant' })
+vim.keymap.set('v', '<leader>cec', "<Esc><Cmd>lua require('jdtls').extract_constant(true)<CR>", { desc = 'extract constant' })
+vim.keymap.set('v', '<leader>cem', "<Esc><Cmd>lua require('jdtls').extract_method(true)<CR>", { desc = 'extract method' })

@@ -9,7 +9,7 @@ return {
 				require("conform").format({ async = true })
 			end,
 			mode = "",
-			desc = "[F]ormat buffer",
+			desc = "format buffer",
 		},
 		{
 			"<leader>tf",
@@ -20,7 +20,7 @@ return {
 					vim.log.levels.INFO
 				)
 			end,
-			desc = "[T]oggle format on save",
+			desc = "toggle format on save",
 		},
 	},
 	opts = {

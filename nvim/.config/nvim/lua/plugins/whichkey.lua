@@ -1,9 +1,26 @@
 return {
 	"folke/which-key.nvim",
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
 	event = "VimEnter",
 	opts = {
 		delay = 1000,
-		icons = { mappings = vim.g.have_nerd_font },
+
+        icons = {
+            mappings = vim.g.have_nerd_font,
+
+            rules = {
+                {
+                    pattern = "harpoon",
+                    icon = "󰛢",
+                    color = "yellow",
+                },
+                {
+                    pattern = "git",
+                    icon = "󰊢",
+                    color = "orange",
+                },
+            },
+        },
 
 		-- Document existing key chains
 		spec = {

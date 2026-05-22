@@ -4,14 +4,15 @@ return {
 	build = ":TSUpdate",
 	opts = {
 		ensure_installed = {
-			"help",
-			"javascript",
-			"typescript",
 			"c",
-			"lua",
-			"rust",
-			"php",
 			"java",
+			"javascript",
+			"help",
+			"lua",
+			"php",
+			"rust",
+            "twig",
+			"typescript",
 		},
 	},
 }

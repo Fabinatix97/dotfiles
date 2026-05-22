@@ -6,6 +6,7 @@ return {
 		lint.linters_by_ft = {
 			markdown = { "markdownlint-cli2" },
 			php = { "phpcs" },
+            twig = { "twigcs" },
 		}
 
 		-- To allow other plugins to add linters to require('lint').linters_by_ft,

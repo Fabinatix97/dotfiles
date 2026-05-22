@@ -36,6 +36,7 @@ return {
 		end,
 		formatters_by_ft = {
 			php = { "php_cs_fixer" },
+            twig = { "twig-cs-fixer" },
 		},
 	},
 }

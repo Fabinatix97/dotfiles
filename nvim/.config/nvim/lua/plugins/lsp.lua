@@ -71,7 +71,9 @@ return {
 				filetypes = { "php" },
 				root_markers = { "composer.json" },
 			},
-            jdtls = {},
+            twiggy_language_server = {
+                enabled = true,
+            },
 			lua_ls = {
 				on_init = function(client)
 					client.server_capabilities.documentFormattingProvider = false -- Disable formatting (formatting is done by stylua)
@@ -120,6 +122,8 @@ return {
 			"phpcs",
 			"php-cs-fixer",
 			"stylua",
+            "twigcs",
+            "twig-cs-fixer",
 		})
 
 		require("mason-tool-installer").setup({ ensure_installed = ensure_installed })

@@ -17,15 +17,7 @@ return {
         'mfussenegger/nvim-dap',
       },
       config = function()
-        require('mason-nvim-dap').setup {
-          automatic_installation = true,
-
-          ensure_installed = {
-            'php',
-          },
-
-          handlers = {},
-        }
+        require('mason-nvim-dap').setup()
       end,
     },
 
@@ -58,6 +50,16 @@ return {
   config = function()
     local dap = require 'dap'
     local dapui = require 'dapui'
+
+    dap.configurations.java = {
+        {
+            type = "java",
+            request = "attach",
+            name = "Debug (Attach) - Remote",
+            hostName = "127.0.0.1",
+            port = 5005,
+        },
+    }
 
     -- DAP UI setup
     ---@diagnostic disable-next-line: missing-fields

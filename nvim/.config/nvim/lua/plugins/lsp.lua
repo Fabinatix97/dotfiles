@@ -116,6 +116,7 @@ return {
 		local ensure_installed = vim.tbl_keys(servers or {})
 		-- Install additional tools (linters, formatters, DAPs)
 		vim.list_extend(ensure_installed, {
+			"jdtls",
 			"java-debug-adapter",
 			"java-test",
             "markdownlint-cli2",

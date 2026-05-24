@@ -1,5 +1,5 @@
 -- General
-vim.keymap.set("i", "<C-c>", "<Esc>")
+vim.keymap.set({ "n", "v" }, "<C-c>", "<Esc>")
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = "project view" })
 

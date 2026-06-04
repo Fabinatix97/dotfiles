@@ -15,6 +15,7 @@
         "custom/weather"
     ],
     "modules-right": [
+        "custom/recording",
         "custom/mem",
         "custom/cpu",
         "temperature",
@@ -87,6 +88,14 @@
         "on-click": "kitty --class nordvpn sh -c '$HOME/.config/waybar/scripts/nordvpn_connect.sh'",
         "signal": 9,
         "tooltip": false,
+    },
+
+    "custom/recording": {
+        "format": "󰻃 REC",
+        "interval": 1,
+        "exec-if": "pgrep -x wf-recorder",
+        "exec": "cat /tmp/wf-recorder-current",
+        "tooltip": true
     },
 
     "custom/day": {

@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+FILE="/tmp/screenshot-$(date +%s).png"
+
+grim "$FILE"
+wl-copy < "$FILE"
+satty --filename "$FILE"

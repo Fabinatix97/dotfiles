@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+STATE_FILE="/tmp/wf-recorder-current"
+
+if pgrep wf-recorder > /dev/null; then
+    pkill wf-recorder
+    FILE=$(cat "$STATE_FILE")
+    rm -f "$STATE_FILE"
+    notify-send "🎥 Recording stopped" "$FILE" -i video-x-generic
+else
+    OUT="$HOME/Videos/recording-$(date +%Y%m%d-%H%M%S).mp4"
+    echo "$OUT" > "$STATE_FILE"
+    wf-recorder -f "$OUT" &
+fi

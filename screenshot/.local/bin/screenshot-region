@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+FILE="/tmp/screenshot-$(date +%s).png"
+
+grim -g "$(slurp)" "$FILE"
+wl-copy < "$FILE"
+notify-send "Screenshot captured" "Saved to clipboard" -i image-x-generic

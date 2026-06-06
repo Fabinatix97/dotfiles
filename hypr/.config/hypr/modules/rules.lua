@@ -28,3 +28,18 @@ hl.window_rule({
     move  = "20 monitor_h-120",
     float = true,
 })
+
+hl.window_rule({
+  name = "nautilus-float-center",
+  match = { class = "org.gnome.Nautilus" },
+  float = true,
+  center = true,
+})
+
+hl.window_rule({
+  name = "waybar-popup",
+  match = { class = "waybar" },
+  float = true,
+  center = true,
+  max_size = { 1500, 1000 },
+})

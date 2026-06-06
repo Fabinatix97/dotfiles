@@ -43,7 +43,7 @@
         "interval": 3600,
         "exec": "dnf check-update --refresh | grep -v '^$' | wc -l",
         "exec-if": "command -v dnf",
-        "on-click": "kitty sh -c 'sudo dnf upgrade -y; echo Done - Press enter to exit; read'; pkill -SIGRTMIN+8 waybar",
+        "on-click": "kitty --class waybar sh -c 'sudo dnf upgrade -y; echo Done - Press enter to exit; read'; pkill -SIGRTMIN+8 waybar",
         "signal": 8,
         "tooltip": false
     },
@@ -53,7 +53,7 @@
         "interval": 3600,
         "exec": "flatpak update --assumeyes --no-deploy 2>/dev/null | grep -E '^(Update|Install|Remove):' | wc -l",
         "exec-if": "command -v flatpak",
-        "on-click": "kitty sh -c 'flatpak update -y; echo Done - Press enter to exit; read'; pkill -SIGRTMIN+10 waybar",
+        "on-click": "kitty --class waybar sh -c 'flatpak update -y; echo Done - Press enter to exit; read'; pkill -SIGRTMIN+10 waybar",
         "signal": 10,
         "tooltip": false
     },
@@ -62,7 +62,7 @@
         "exec": "~/.config/waybar/scripts/audio-status.sh",
         "return-type": "json",
         "interval": 2,
-        "on-click": "kitty --class audio-switcher ~/.config/waybar/scripts/audio-select.sh",
+        "on-click": "kitty --class waybar ~/.config/waybar/scripts/audio-select.sh",
         "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
         "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%",
         "tooltip": true
@@ -70,24 +70,24 @@
 
     "custom/bluetui": {
         "format": "󰂯",
-        "on-click": "kitty --hold -e ~/.local/bin/bluetui",
-        "tooltip": false,
+        "on-click": "kitty --class waybar --hold -e ~/.local/bin/bluetui",
+        "tooltip": false
     },
 
     "custom/network": {
         "format": "",
-        "on-click": "kitty sh -c '$HOME/.config/waybar/scripts/wifi_connect.sh'",
+        "on-click": "kitty --class waybar sh -c '$HOME/.config/waybar/scripts/wifi_connect.sh'",
         "min-length": 3,
-        "tooltip": false,
+        "tooltip": false
     },
 
     "custom/nordvpn": {
         "format": "{} ",
         "interval": 15,
         "exec": "$HOME/.config/waybar/scripts/nordvpn_status.sh",
-        "on-click": "kitty --class nordvpn sh -c '$HOME/.config/waybar/scripts/nordvpn_connect.sh'",
+        "on-click": "kitty --class waybar sh -c '$HOME/.config/waybar/scripts/nordvpn_connect.sh'",
         "signal": 9,
-        "tooltip": false,
+        "tooltip": false
     },
 
     "custom/recording": {
@@ -156,6 +156,6 @@
         "format-plugged": "{capacity}% ",
         "format-alt": "{time} {icon}",
         "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
-	"on-update": "$HOME/.config/waybar/scripts/check_battery.sh"
+        "on-update": "$HOME/.config/waybar/scripts/check_battery.sh"
     }
 }

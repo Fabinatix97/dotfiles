@@ -11,6 +11,10 @@ hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + space", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + T", hl.dsp.layout("togglesplit"))
+hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("systemctl suspend"))
+hl.bind(mainMod .. " + V", hl.dsp.exec_cmd("cliphist list | wofi -S dmenu | cliphist decode | wl-copy"))
+hl.bind(mainMod .. " + SHIFT + C", hl.dsp.exec_cmd("hyprpicker -a"))
+hl.bind(mainMod .. " + period", hl.dsp.exec_cmd("~/.local/bin/wofi-emoji"))
 
 -- Move focus
 hl.bind(mainMod .. " + H",  hl.dsp.focus({ direction = "left" }))

@@ -21,6 +21,18 @@ hl.window_rule({
     no_focus = true,
 })
 
+hl.window_rule({
+  name = "firefox-ws1",
+  match = { class = "firefox" },
+  workspace = "1 silent",
+})
+
+hl.window_rule({
+  name = "kitty-ws2",
+  match = { class = "kitty" },
+  workspace = "2 silent",
+})
+
 -- Hyprland-run windowrule
 hl.window_rule({
     name  = "move-hyprland-run",

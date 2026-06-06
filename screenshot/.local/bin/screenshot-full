@@ -4,4 +4,4 @@ FILE="/tmp/screenshot-$(date +%s).png"
 
 grim "$FILE"
 wl-copy < "$FILE"
-satty --filename "$FILE"
+flatpak run org.satty.Satty --filename "$FILE"

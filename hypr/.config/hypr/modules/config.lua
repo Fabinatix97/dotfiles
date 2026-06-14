@@ -13,7 +13,8 @@ hl.config({
 
     -- https://wiki.hypr.land/Configuring/Basics/Variables/#input
     input = {
-        kb_layout  = "de",
+        kb_layout  = "us",
+        kb_variant = "altgr-intl",
         follow_mouse = 1,
         sensitivity = 0,
         touchpad = {

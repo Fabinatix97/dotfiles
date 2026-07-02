@@ -98,12 +98,16 @@
       "commands": ["workbench.action.togglePanel"]
     },
     {
-      "before": ["<leader>", "e"],
+      "before": ["<leader>", "p", "v"],
       "commands": ["workbench.action.toggleSidebarVisibility"]
     },
     {
-      "before": ["<leader>", "f", "f"],
+      "before": ["<leader>", "s", "f"],
       "commands": ["workbench.action.quickOpen"]
+    },
+    {
+      "before": ["<leader>", "s", "g"],
+      "commands": ["workbench.action.findInFiles"]
     },
     {
       "before": ["<leader>", "p", "r"],
@@ -117,24 +121,6 @@
       "before": ["<leader>", "g", "d"],
       "commands": ["editor.action.revealDefinition"]
     },
-    {
-      "before": ["K"],
-      "commands": ["editor.action.moveLinesUpAction"]
-    },
-    {
-      "before": ["J"],
-      "commands": ["editor.action.moveLinesDownAction"]
-    }
   ],
-  "vim.visualModeKeyBindings": [
-    {
-      "before": ["K"],
-      "commands": ["editor.action.moveLinesUpAction"]
-    },
-    {
-      "before": ["J"],
-      "commands": ["editor.action.moveLinesDownAction"]
-    }
-  ]
 }
 

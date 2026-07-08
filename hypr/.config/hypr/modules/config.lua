@@ -14,7 +14,6 @@ hl.config({
     -- https://wiki.hypr.land/Configuring/Basics/Variables/#input
     input = {
         kb_layout  = "us",
-        kb_variant = "altgr-intl",
         follow_mouse = 1,
         sensitivity = 0,
         touchpad = {
@@ -52,4 +51,9 @@ hl.config({
         disable_hyprland_logo   = true,
         disable_hyprland_guiutils_check = true
     },
+
+    -- https://wiki.hypr.land/Configuring/Advanced-and-Cool/XWayland/
+    xwayland = {
+        force_zero_scaling = true
+    }
 })

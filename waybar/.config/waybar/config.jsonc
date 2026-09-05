@@ -14,11 +14,10 @@
     ],
     "modules-right": [
         "custom/recording",
-        "memory",
-        "cpu",
-        "temperature",
+        "tray",
+        "group/system",
         "battery",
-        "tray"
+        "custom/power"
     ],
 
 
@@ -108,7 +107,28 @@
         "device": "intel_backlight",
         "format": "{percent}% {icon}",
         "format-icons": ["󰃚","󰃛","󰃜","󰃝","󰃞","󰃟","󰃠"],
-        "min-length": 7
+        "min-length": 7,
+        "tooltip": false
+    },
+
+    "tray": {
+        "icon-size": 18,
+        "spacing": 8
+    },
+
+    "group/system": {
+        "orientation": "inherit",
+        "click-to-reveal": true,
+        "drawer": {
+            "transition-duration": 100,
+            "children-class": "not-power",
+            "transition-left-to-right": false
+        },
+        "modules": [
+            "memory", // First element is the "group leader" and won't ever be hidden
+            "cpu",
+            "temperature"
+        ]
     },
 
     "battery": {
@@ -124,8 +144,16 @@
         "on-update": "$HOME/.config/waybar/scripts/check_battery.sh"
     },
 
-    "tray": {
-        "icon-size": 18,
-        "spacing": 8
+    "custom/power": {
+        "format" : "⏻ ",
+        "tooltip": false,
+        "menu": "on-click",
+        "menu-file": "~/.config/waybar/power_menu.xml",
+        "menu-actions": {
+            "shutdown": "shutdown",
+            "reboot": "reboot",
+            "suspend": "systemctl suspend",
+            "hibernate": "systemctl hibernate"
+        }
     }
 }

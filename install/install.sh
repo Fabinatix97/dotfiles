@@ -54,6 +54,7 @@ sudo pacman -S --needed --noconfirm \
   man-db \
   man-pages \
   markdownlint-cli2 \
+  mpv \
   nautilus \
   neovim \
   noto-fonts \

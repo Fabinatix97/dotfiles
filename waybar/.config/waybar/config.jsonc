@@ -17,6 +17,9 @@
         "custom/recording",
         "tray",
         "group/system",
+        "cpu",
+        "memory",
+        "temperature",
         "battery",
         "custom/power"
     ],
@@ -124,21 +127,6 @@
     "tray": {
         "icon-size": 18,
         "spacing": 8
-    },
-
-    "group/system": {
-        "orientation": "inherit",
-        "click-to-reveal": true,
-        "drawer": {
-            "transition-duration": 100,
-            "children-class": "not-power",
-            "transition-left-to-right": false
-        },
-        "modules": [
-            "memory", // First element is the "group leader" and won't ever be hidden
-            "cpu",
-            "temperature"
-        ]
     },
 
     "battery": {

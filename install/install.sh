@@ -60,7 +60,6 @@ sudo pacman -S --needed --noconfirm \
   noto-fonts \
   noto-fonts-emoji \
   obsidian \
-  pacman-contrib \
   playerctl \
   prettier \
   python \

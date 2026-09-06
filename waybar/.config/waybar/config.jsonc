@@ -6,7 +6,8 @@
         "custom/audio",
         "backlight",
         "bluetooth",
-        "network"
+        "network",
+        "custom/nordvpn"
     ],
     "modules-center": [
         "custom/day",
@@ -62,6 +63,15 @@
         "tooltip-format-wifi": "{essid} ({signalStrength}%)",
         "tooltip-format-ethernet": "{ifname}",
         "tooltip-format-disconnected": "Disconnected"
+    },
+
+    "custom/nordvpn": {
+        "format": "{} ",
+        "interval": 15,
+        "exec": "$HOME/.config/waybar/scripts/nordvpn_status.sh",
+        "on-click": "kitty --class waybar sh -c '$HOME/.config/waybar/scripts/nordvpn_connect.sh'",
+        "signal": 9,
+        "tooltip": false
     },
 
     "custom/recording": {

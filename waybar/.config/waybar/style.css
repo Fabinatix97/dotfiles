@@ -48,6 +48,7 @@ window#waybar.hidden {
 #custom-audio,
 #bluetooth,
 #network,
+#custom-nordvpn,
 #custom-day,
 #clock,
 #custom-recording,
@@ -112,9 +113,10 @@ window#waybar.hidden {
     padding-right: 10px;
 }
 
-/* Bluetooth and network as combined module */
+/* Bluetooth, network and NordVPN as combined module */
 #bluetooth,
-#network {
+#network,
+#custom-nordvpn {
     margin-right: 0px;
 }
 
@@ -124,5 +126,10 @@ window#waybar.hidden {
 
 #network {
     padding-left: 0px;
+    padding-right: 0px;
+    border-radius: 0px;
+}
+
+#custom-nordvpn {
     border-radius: 0 10px 10px 0;
 }

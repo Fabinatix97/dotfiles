@@ -10,6 +10,10 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
+-- This allows filtering the command history
+vim.keymap.set("c", "<C-p>", "<Up>")
+vim.keymap.set("c", "<C-n>", "<Down>")
+
 -- Undotree
 vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle, { desc = "toggle undotree" })
 

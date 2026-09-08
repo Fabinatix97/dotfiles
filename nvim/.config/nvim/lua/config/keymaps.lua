@@ -17,6 +17,12 @@ vim.keymap.set("c", "<C-n>", "<Down>")
 -- Undotree
 vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle, { desc = "toggle undotree" })
 
+-- More familiar buffer navigation
+vim.keymap.set("n", "]b", "<cmd>bnext<CR>", { silent = true, desc = "next buffer"})
+vim.keymap.set("n", "[b", "<cmd>bprevious<CR>", { silent = true, desc = "previous buffer"})
+vim.keymap.set("n", "[B", "<cmd>bfirst<CR>", { silent = true, desc = "first buffer"})
+vim.keymap.set("n", "]B", "<cmd>blast<CR>", { silent = true, desc = "last buffer"})
+
 -- Floating diagnostics
 vim.keymap.set("n", "]d", function() vim.diagnostic.jump({ count = 1, float = true }) end, { desc = "next diagnostic" })
 vim.keymap.set("n", "[d", function() vim.diagnostic.jump({ count = -1, float = true }) end, { desc = "previous diagnostic" })

@@ -11,9 +11,7 @@ RUN useradd -ms /bin/bash dev \
 USER dev
 WORKDIR /home/dev
 
-RUN git clone https://github.com/Fabinatix97/.dotfiles.git \
-    && cd .dotfiles \
-    && git switch arch
+RUN git clone https://github.com/Fabinatix97/.dotfiles.git
 
 ENV USER=dev
 

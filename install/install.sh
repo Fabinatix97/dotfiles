@@ -120,7 +120,7 @@ ssh -i ~/.ssh/id_ed25519 -T git@github.com || true
 rm -rf "$HOME/.dotfiles"
 
 # Clone and stow dotfiles
-git clone -b arch git@github.com:Fabinatix97/.dotfiles.git "$HOME/.dotfiles/"
+git clone git@github.com:Fabinatix97/.dotfiles.git "$HOME/.dotfiles/"
 cd "$HOME/.dotfiles/"
 git submodule update --init private
 stow btop fastfetch hypr kitty nmtui nvim screenshot starship tmux waybar wofi
@@ -135,7 +135,7 @@ if [[ ! -f "$HOME/.config/chromium/Default/Preferences" ]]; then
   cp "$HOME/.dotfiles/install/chromium/initial-preferences.json" \
     "$HOME/.config/chromium/Default/Preferences"
 fi
-git clone -b arch git@github.com:Fabinatix97/.dotfiles-personal.git "$HOME/.dotfiles-personal/"
+git clone git@github.com:Fabinatix97/.dotfiles-personal.git "$HOME/.dotfiles-personal/"
 cd "$HOME/.dotfiles-personal/"
 rm -f "$HOME/.bashrc" "$HOME/.bash_profile"
 stow bashrc git fonts onedrive

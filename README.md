@@ -44,6 +44,20 @@ git push
 > are not automatically reflected here. You’ll need to manually update the
 > submodule to get the latest state of the main branch.
 
+## Testing install.sh
+
+The `./install/` directory contains an installation script that sets up my
+computer after a fresh archinstall. It is recommended to test the installation
+after every change to the [install.sh](./install/install.sh) file by running it
+in a Docker container:
+
+```bash
+cd .dotfiles
+docker build -t arch:dev install
+docker run -it --rm arch:dev
+./.dotfiles/install/install.sh
+```
+
 ## VS Code Extensions
 
 To install all my frequently used VS Code extensions at once, run the following

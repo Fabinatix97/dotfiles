@@ -8,11 +8,13 @@ return {
 	},
 	config = function()
 		require("telescope").setup({
-			defaults = require("telescope.themes").get_ivy(),
+			defaults = require("telescope.themes").get_ivy({
+				-- See `:h telescope.defaults.path_display` for more info.
+				path_display = { "filename_first", "truncate" },
+			}),
 			pickers = {
 				find_files = {
 					hidden = true,
-					no_ignore = true,
 				},
 				live_grep = {
 					additional_args = { "--hidden", "--no-ignore" },

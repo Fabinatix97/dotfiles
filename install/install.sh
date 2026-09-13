@@ -162,8 +162,9 @@ gsettings set org.gnome.desktop.interface color-scheme prefer-dark
 bash -c '
   curl -s "https://get.sdkman.io?ci=true&rcupdate=false" | bash
   source "$HOME/.sdkman/bin/sdkman-init.sh"
-  sdk install java 17-tem
+  sdk install java 17.0.20-tem
   sdk install java 21-tem
+  sdk install java 25-tem
   sdk install java 26-tem
   sdk install maven
 '

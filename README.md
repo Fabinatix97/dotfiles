@@ -53,7 +53,7 @@ in a Docker container:
 
 ```bash
 cd .dotfiles
-docker build -t arch:dev install
+docker build --no-cache -t arch:dev install
 docker run -it --rm arch:dev
 ./.dotfiles/install/install.sh
 ```

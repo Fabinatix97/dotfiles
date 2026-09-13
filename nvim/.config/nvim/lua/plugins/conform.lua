@@ -35,6 +35,7 @@ return {
 			return { timeout_ms = 500 }
 		end,
 		formatters_by_ft = {
+			lua = { "stylua" },
 			php = { "php_cs_fixer" },
 		},
 	},

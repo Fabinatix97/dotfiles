@@ -11,7 +11,7 @@ return {
 			"lua",
 			"php",
 			"rust",
-            "twig",
+			"twig",
 			"typescript",
 		},
 	},
